@@ -2,6 +2,7 @@ package com.apape.miledev.core.domain.article;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
+import jakarta.persistence.PrePersist;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
@@ -20,14 +21,12 @@ public class TechBlogArticle extends Article {
     public static TechBlogArticle create(
             String title,
             String thumbnailImageUrl,
-            Long viewCount,
             String sourceUrl,
             String sourceFrom
     ) {
         return builder()
                 .title(title)
                 .thumbnailImageUrl(thumbnailImageUrl)
-                .viewCount(viewCount)
                 .sourceUrl(sourceUrl)
                 .sourceFrom(sourceFrom)
                 .build();

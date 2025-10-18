@@ -17,13 +17,12 @@ class TechBlogArticleSpringBootTest {
     private ArticleRepository articleRepository;
 
     @Test
-    @Rollback(false)
+//    @Rollback(false)
     public void create() throws Exception {
         //given
         TechBlogArticle techBlogArticle = TechBlogArticle.create(
                 "테스트",
                 "https://toss.tech/article/payments-legacy-1",
-                15L,
                 "https://toss.tech/article/payments-legacy-1",
                 "토스"
         );
