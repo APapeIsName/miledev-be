@@ -2,9 +2,12 @@ package com.apape.miledev.core.domain.article;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
+import jakarta.persistence.PrePersist;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
+
+import java.time.LocalDate;
 
 @DiscriminatorValue("TECH_BLOG")
 @Entity
@@ -17,19 +20,21 @@ public class TechBlogArticle extends Article {
 
     private String sourceFrom;
 
+    private LocalDate publishedAt;
+
     public static TechBlogArticle create(
             String title,
             String thumbnailImageUrl,
-            Long viewCount,
             String sourceUrl,
-            String sourceFrom
+            String sourceFrom,
+            LocalDate publishedAt
     ) {
         return builder()
                 .title(title)
                 .thumbnailImageUrl(thumbnailImageUrl)
-                .viewCount(viewCount)
                 .sourceUrl(sourceUrl)
                 .sourceFrom(sourceFrom)
+                .publishedAt(publishedAt)
                 .build();
     }
 
