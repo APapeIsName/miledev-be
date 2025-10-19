@@ -1,7 +1,13 @@
 package com.apape.miledev.core.domain.article.dto;
 
-public record ReadTechBlogDto(
+import java.time.LocalDate;
 
+public record ReadTechBlogDto(
+        String title,
+        String thumbnailImageUrl,
+        String sourceUrl,
+        String publishedFrom,
+        LocalDate publishedAt
 ) {
 
 }
