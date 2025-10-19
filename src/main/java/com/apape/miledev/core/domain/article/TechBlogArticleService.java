@@ -1,6 +1,7 @@
 package com.apape.miledev.core.domain.article;
 
 import com.apape.miledev.core.domain.article.dto.CreateTechBlogDto;
+import com.apape.miledev.core.domain.article.dto.ReadTechBlogDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,7 +23,8 @@ public class TechBlogArticleService {
                 techBlogDto.title(),
                 techBlogDto.thumbnailImageUrl(),
                 techBlogDto.sourceUrl(),
-                techBlogDto.sourceFrom()
+                techBlogDto.sourceFrom(),
+                techBlogDto.publishedAt()
         )).toList();
 
         List<TechBlogArticle> savedTechBlogArticles = techBlogArticleRepository.saveAll(articles);
@@ -33,7 +35,12 @@ public class TechBlogArticleService {
                                 techBlogArticle.getTitle(),
                                 techBlogArticle.getThumbnailImageUrl(),
                                 techBlogArticle.getSourceUrl(),
-                                techBlogArticle.getSourceFrom()
+                                techBlogArticle.getSourceFrom(),
+                                techBlogArticle.getPublishedAt()
                         )).toList());
     }
+
+//    public List<ReadTechBlogDto> readTechBlogList() {
+//
+//    }
 }

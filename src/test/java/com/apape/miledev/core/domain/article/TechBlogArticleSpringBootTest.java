@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
+
 @SpringBootTest
 @Transactional
 @Component
@@ -24,7 +26,8 @@ class TechBlogArticleSpringBootTest {
                 "테스트",
                 "https://toss.tech/article/payments-legacy-1",
                 "https://toss.tech/article/payments-legacy-1",
-                "토스"
+                "토스",
+                LocalDate.now()
         );
 
         //when

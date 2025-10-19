@@ -1,5 +1,6 @@
 package com.apape.miledev.core.domain.article.dto;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public record CreateTechBlogDto(
@@ -9,6 +10,7 @@ public record CreateTechBlogDto(
             String title,
             String thumbnailImageUrl,
             String sourceUrl,
-            String sourceFrom
+            String sourceFrom,
+            LocalDate publishedAt
     ) {}
 }

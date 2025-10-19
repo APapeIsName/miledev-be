@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @SpringBootTest
@@ -27,7 +28,8 @@ class TechBlogArticleServiceSpringBootTest {
                                         "테스트",
                                         "https://toss.tech/article/payments-legacy-1",
                                         "https://toss.tech/article/payments-legacy-1",
-                                        "토스"
+                                        "토스",
+                                        LocalDate.now()
                                 )
                         )
                 )
